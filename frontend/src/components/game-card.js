@@ -42,7 +42,7 @@ export default function BasicCard() {
         console.log('Amount:', amount);
         console.log('Get Dice Roll');
 
-        axios.get('http://localhost:4000/get-dice-roll')
+        axios.get('https://sevenup-7down.onrender.com/get-dice-roll')
             .then(response => {
                 console.log(response.data);
                 setDiceRollValue(response.data);
@@ -54,7 +54,7 @@ export default function BasicCard() {
 
         switch (option) {
             case 'Lucky 7':
-                axios.get('http://localhost:4000/check-choice/luckyNumber')
+                axios.get('https://sevenup-7down.onrender.com/check-choice/luckyNumber')
                     .then(response => {
                         console.log(response.data);
                     })
@@ -64,7 +64,7 @@ export default function BasicCard() {
                 break;
 
             case 'Below 7':
-                axios.get('http://localhost:4000/check-choice/below7')
+                axios.get('https://sevenup-7down.onrender.com/check-choice/below7')
                     .then(response => {
                         console.log(response.data);
                     })
@@ -74,7 +74,7 @@ export default function BasicCard() {
                 break;
 
             case 'Above 7':
-                axios.get('http://localhost:4000/check-choice/above7')
+                axios.get('https://sevenup-7down.onrender.com/check-choice/above7')
                     .then(response => {
                         console.log(response.data);
                     })
@@ -86,7 +86,7 @@ export default function BasicCard() {
                 break;
         }
 
-        axios.post('http://localhost:4000/update-amount', {
+        axios.post('https://sevenup-7down.onrender.com/update-amount', {
             amount: amount,
             bet: bet
         })
